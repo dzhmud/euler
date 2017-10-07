@@ -1,10 +1,12 @@
 package me.dzhmud.euler.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Different utility methods for finding factors of number.
@@ -69,6 +71,29 @@ public final class FactorUtils {
 			list.sort(null);
 			result = new LinkedHashSet<>(list);
 		}
+		return result;
+	}
+
+	private static int[] cache = new int[10000];
+
+	public static void setDivisorsSumCacheSize(int size) {
+		if (size > cache.length) {
+			cache = Arrays.copyOf(cache, size);
+		}
+	}
+
+	public static int getDivisorsSum(int value) {
+		if (value == 0)
+			return 0;
+		if (value < cache.length && cache[value] > 0)
+			return cache[value];
+		final Set<Long> divisors = getDivisors(value);
+		divisors.remove(Long.valueOf(value));//this is needed
+		final AtomicInteger sum = new AtomicInteger(0);
+		divisors.forEach(aLong -> sum.addAndGet(aLong.intValue()));
+		int result = sum.intValue();
+		if (value < cache.length)
+			cache[value] = result;
 		return result;
 	}
 

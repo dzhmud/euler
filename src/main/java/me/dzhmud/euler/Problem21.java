@@ -1,10 +1,9 @@
 package me.dzhmud.euler;
 
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
-import static me.dzhmud.euler.util.FactorUtils.getDivisors;
+import static me.dzhmud.euler.util.FactorUtils.getDivisorsSum;
+
 /**
  *
 
@@ -29,26 +28,9 @@ public class Problem21 implements EulerSolution {
 		return "" + IntStream.range(1, 10000)
 				.filter(value -> {
 					int divSum = getDivisorsSum(value);
-					return divSum != value && value == getDivisorsSum(divSum);
+					return value != divSum && value == getDivisorsSum(divSum);
 				})
 				.sum();
-	}
-
-	private int[] cache = new int[10000];
-
-	private int getDivisorsSum(int value) {
-		if (value == 0)
-			return 0;
-		if (value < 10000 && cache[value] > 0)
-			return cache[value];
-		final Set<Long> divisors = getDivisors(value);
-		divisors.remove(Long.valueOf(value));
-		final AtomicInteger sum = new AtomicInteger(0);
-		divisors.forEach(aLong -> sum.addAndGet(aLong.intValue()));
-		int result = sum.intValue();
-		if (value < 10000)
-			cache[value] = result;
-		return result;
 	}
 
 }
