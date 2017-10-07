@@ -42,6 +42,7 @@ public class AnswerCorrectnessTest {
 		test(Problem21.class, "31626");
 		test(Problem22.class, "871198282");
 		test(Problem23.class, "4179871");
+		test(Problem24.class, "2783915460");
 
 
 		test(Problem67.class, "7273");
