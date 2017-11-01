@@ -44,10 +44,22 @@ public class AnswerCorrectnessTest {
 //		test(Problem23.class, "4179871");
 //		test(Problem24.class, "2783915460");
 //		test(Problem25.class, "4782");
-		test(Problem26.class, "983");
+//		test(Problem26.class, "983");
+//		test(Problem27.class, "-59231");
+//		test(Problem28.class, "669171001");
+//		test(Problem29.class, "9183");
+//		test(Problem30.class, "443839");
+//		test(Problem31.class, "73682");
+//		test(Problem32.class, "45228");
+//		test(Problem33.class, "100");
+//		test(Problem34.class, "40730");
+//		test(Problem35.class, "55");
+//		test(Problem36.class, "872187");
+//		test(Problem37.class, "748317");
+		test(Problem38.class, "---");
 
 
-		test(Problem67.class, "7273");
+//		test(Problem67.class, "7273");
 	}
 
 	private static void test(Class<? extends EulerSolution> clazz, String answer) {
