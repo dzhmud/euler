@@ -56,7 +56,8 @@ public class AnswerCorrectnessTest {
 //		test(Problem35.class, "55");
 //		test(Problem36.class, "872187");
 //		test(Problem37.class, "748317");
-		test(Problem38.class, "---");
+//		test(Problem38.class, "932718654");
+		test(Problem39.class, "840");
 
 
 //		test(Problem67.class, "7273");

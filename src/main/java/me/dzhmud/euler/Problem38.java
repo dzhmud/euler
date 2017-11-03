@@ -1,5 +1,8 @@
 package me.dzhmud.euler;
 
+import java.util.Comparator;
+import java.util.stream.IntStream;
+
 /**
  * Pandigital multiples
  *
@@ -30,7 +33,35 @@ public class Problem38 implements EulerSolution {
 
 	@Override
 	public String getAnswer() {
-		return "" + 0;
+		//it can be faster to generate pandigits, starting from 987654321 and checking if they can be obtained
+		//in the way described
+		return IntStream.range(1,10000)
+				.mapToObj(Problem38::generateValue)
+				.filter(Problem38::checkPandigital)
+				.max(Comparator.naturalOrder())
+				.orElseThrow(IllegalArgumentException::new);
+	}
+
+	private static String generateValue(int base) {
+		StringBuilder sb = new StringBuilder(9);
+		sb.append(base);
+		for (int i = 2; sb.length() < 9; i++) {
+			sb.append(base*i);
+		}
+		return sb.toString();
+	}
+
+	private static char[] digits = new char[]{'1','2','3','4','5','6','7','8','9'};
+
+	private static boolean checkPandigital(String value) {
+		if (value.length() == 9) {
+			for (char digit : digits) {
+				if (value.indexOf(digit) < 0)
+					return false;
+			}
+			return true;
+		}
+		return false;
 	}
 
 }
