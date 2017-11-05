@@ -63,6 +63,7 @@ public class AnswerCorrectnessTest {
 //		test(Problem42.class, "162");
 //		test(Problem43.class, "16695334890");
 		test(Problem44.class, "5482660");
+		test(Problem45.class, "1533776805");
 
 
 		test(Problem67.class, "7273");

@@ -1,9 +1,6 @@
 package me.dzhmud.euler;
 
-import java.util.Arrays;
-
-import static me.dzhmud.euler.Problem44.PentagonalSequence.getValue;
-import static me.dzhmud.euler.Problem44.PentagonalSequence.isPentagonal;
+import me.dzhmud.euler.util.PositionSequence;
 
 /**
  * Pentagon numbers
@@ -29,11 +26,12 @@ public class Problem44 implements EulerSolution {
 		long result = 0;
 		//find first result(may be not the answer)
 //		System.out.println("//find first result(may be not the answer)");
+		final PositionSequence ps = PositionSequence.get(i -> Long.valueOf(i*(3*i-1)/2));
 		for (int j = 2; result == 0; j++) {
-			long pj = getValue(j);
+			long pj = ps.getValue(j);
 			for (int k = 1; k < j; k++) {
-				long pk = getValue(k);
-				if (isPentagonal(pj - pk) && isPentagonal(pj + pk)) {
+				long pk = ps.getValue(k);
+				if (ps.contains(pj - pk) && ps.contains(pj + pk)) {
 //					System.out.println(String.format("Found Pj(%s) = %s and Pk(%s) = %s",j, pj, k, pk));
 					result = pj - pk;
 					break;
@@ -65,7 +63,7 @@ public class Problem44 implements EulerSolution {
 				long sum = pj+pk;
 				if (D % 2 != 0 || sum %2 != 0)
 					continue;
-				if (isPentagonal(D) && isPentagonal(sum)) {
+				if (contains(D) && contains(sum)) {
 					System.out.println(String.format("Found Pj = %s and Pk = %s", pj, pk));
 					result = Math.min(D, result);
 				}
@@ -73,54 +71,6 @@ public class Problem44 implements EulerSolution {
 		}*/
 
 		return "" + result;
-	}
-
-	static class PentagonalSequence {
-		private static long[] values = new long[]{1};
-
-		static long getValue(int index) {
-			if (values.length < index) {
-				fillToIndex(index);
-			}
-			return values[index - 1];
-		}
-
-		static boolean isPentagonal(long value) {
-			if (values[values.length-1] < value) {
-				fillToValue(value);
-				return values[values.length-1] == value;
-			}
-			return Arrays.binarySearch(values, value) >= 0;
-		}
-
-		private static long generateValue(long i) {
-			return i*(3*i-1)/2;
-		}
-
-		static void fillToValue(long value) {
-			if (values[values.length-1] < value) {
-				//fill until approximate index of value
-				int index = (int)Math.sqrt(value/3);
-				fillToIndex(index);
-				//fill until last value is => value
-				while(getValue(values.length) <= value)
-					fillToIndex(values.length+1);
-			} else {
-				System.out.println("No need to call #fillToValue(). Check your code!");
-			}
-		}
-
-		static void fillToIndex(int index) {
-			if (index > values.length) {
-				final int prevLength = values.length;
-				values = Arrays.copyOf(values, index);
-				for (int i = prevLength+1; i <= values.length; i++) {
-					long value = generateValue(i);
-					values[i-1] = value;
-				}
-			}
-		}
-
 	}
 
 }
