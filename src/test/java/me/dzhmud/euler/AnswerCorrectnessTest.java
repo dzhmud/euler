@@ -64,7 +64,9 @@ public class AnswerCorrectnessTest {
 //		test(Problem43.class, "16695334890");
 //		test(Problem44.class, "5482660");
 //		test(Problem45.class, "1533776805");
-		test(Problem46.class, "5777");
+//		test(Problem46.class, "5777");
+//		test(Problem47.class, "134043");
+		test(Problem48.class, "9110846700");
 
 
 		test(Problem67.class, "7273");
