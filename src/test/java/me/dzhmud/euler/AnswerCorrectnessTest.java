@@ -1,5 +1,6 @@
 package me.dzhmud.euler;
 
+import me.dzhmud.euler.pack6.Problem67;
 import org.junit.Test;
 
 import java.lang.management.ManagementFactory;
@@ -15,6 +16,7 @@ import static org.junit.Assert.fail;
  *
  * @author dzhmud
  */
+@SuppressWarnings("unusedImports")
 public class AnswerCorrectnessTest {
 
 	@Test
@@ -68,7 +70,7 @@ public class AnswerCorrectnessTest {
 //		test(Problem47.class, "134043");
 //		test(Problem48.class, "9110846700");
 //		test(Problem49.class, "296962999629");
-		test(Problem50.class, "997651");
+//		test(Problem50.class, "997651");//TODO this one is SLOOOOW
 
 
 		test(Problem67.class, "7273");
