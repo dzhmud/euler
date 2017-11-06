@@ -33,31 +33,30 @@ public class Problem31 implements EulerSolution {
 
 	@Override
 	public String getAnswer() {
-		HashSet<Coins> coins = new LinkedHashSet<>(Arrays.asList(Coins.values()));
-		String result =  ""+ countDifferentWays(200, coins, new ArrayList<>());
-		return result;
+		final HashSet<Coins> coins = new LinkedHashSet<>(Arrays.asList(Coins.values()));
+		return "" + countDifferentWays(200, coins, new ArrayList<>());
 	}
 
-	private static List<List<Coins>> differentWays = new ArrayList<>();
+//	private static List<List<Coins>> differentWays = new ArrayList<>();
 
 	//TODO clean this out
 	private static int countDifferentWays(int targetSum, HashSet<Coins> availableCoins, ArrayList<Coins> fixedCoins) {
 		if (targetSum == 0) {
-			differentWays.add((List<Coins>)fixedCoins.clone());
+//			differentWays.add(clone(fixedCoins));
 			return 1;
 		}
 		if (availableCoins.size() == 1) {//assume it is 1p.
-			List<Coins> finishedVariant = (List<Coins>)fixedCoins.clone();
+			List<Coins> finishedVariant = clone(fixedCoins);
 			Coins lastCoin = availableCoins.iterator().next();
 			while (targetSum-- > 0) {
 				finishedVariant.add(lastCoin);
 			}
-			differentWays.add(finishedVariant);
+//			differentWays.add(finishedVariant);
 			return 1;
 		}
 		int result = 0;
 		Coins biggest = getMax(availableCoins);
-		availableCoins = (HashSet<Coins>)availableCoins.clone();
+		availableCoins = new HashSet<>(availableCoins);
 		availableCoins.remove(biggest);
 		System.out.println(biggest + " removing from set.");
 		if (biggest.value > targetSum) {
@@ -67,19 +66,18 @@ public class Problem31 implements EulerSolution {
 //			availableCoins.remove(biggest);
 			System.out.println(biggest+ " == targetSum, count 1 + number of ways w/out this value.");
 			{
-				List<Coins> finishedVariant = (List<Coins>)fixedCoins.clone();
+				List<Coins> finishedVariant = clone(fixedCoins);
 				finishedVariant.add(biggest);
-				differentWays.add(finishedVariant);
+//				differentWays.add(finishedVariant);
 			}
 			return 1 + countDifferentWays(targetSum, availableCoins, fixedCoins);
 		} else {
-//			availableCoins.remove(biggest);
 			System.out.println(biggest+ " < " + targetSum);
 			boolean withoutCurrentBiggestCoin = true;
 			while (targetSum >= 0) {
 				System.out.println("counting ways(" + targetSum+", "+availableCoins+")");
 
-				fixedCoins = (ArrayList<Coins>)fixedCoins.clone();
+				fixedCoins = clone(fixedCoins);
 				if (withoutCurrentBiggestCoin) {
 					withoutCurrentBiggestCoin = false;
 				} else {
@@ -91,6 +89,10 @@ public class Problem31 implements EulerSolution {
 			}
 		}
 		return result;
+	}
+
+	private static ArrayList<Coins> clone(ArrayList<Coins> list) {
+		return new ArrayList<>(list);
 	}
 
 	private static Coins getMax(Collection<Coins> collection) {
@@ -105,7 +107,7 @@ public class Problem31 implements EulerSolution {
 	}
 
 	private enum Coins {
-		p1(1), p2(2), p5(5), p10(10), p20(20), p50(50), £1(100), £2(200);
+		p1(1), p2(2), p5(5), p10(10), p20(20), p50(50), P1(100), P2(200);
 		private final int value;
 
 		Coins(int pence) {
