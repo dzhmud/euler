@@ -35,7 +35,6 @@ public class Problem31 implements EulerSolution {
 	public String getAnswer() {
 		HashSet<Coins> coins = new LinkedHashSet<>(Arrays.asList(Coins.values()));
 		String result =  ""+ countDifferentWays(200, coins, new ArrayList<>());
-		System.out.println(differentWays);
 		return result;
 	}
 
