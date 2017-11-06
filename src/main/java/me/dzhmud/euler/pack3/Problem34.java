@@ -59,7 +59,7 @@ public class Problem34 implements EulerSolution {
 			sb.append(sValue.charAt(i)).append("! + ");
 		}
 		sb.delete(sb.length()-3, sb.length());
-		System.out.println(sb.toString());
+//		System.out.println(sb.toString());
 	}
 
 }

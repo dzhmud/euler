@@ -44,7 +44,7 @@ public class Problem47 implements EulerSolution {
 				.filter(x-> hasXPrimeFactors(x+2, 4))
 				.filter(x-> hasXPrimeFactors(x+3, 4))
 				.findFirst()
-				.orElseThrow(IllegalArgumentException::new);
+				.orElseThrow(SolutionNotFoundException::new);
 	}
 
 	private static boolean hasXPrimeFactors(long value, int count) {

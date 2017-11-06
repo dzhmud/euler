@@ -39,9 +39,9 @@ public class Problem40 implements EulerSolution {
 				.limit(1000000)
 				.peek(i-> index.incrementAndGet())
 				.filter(i -> searchedIndex.test(index.intValue()))
-				.peek(i -> System.out.println("d("+index.intValue()+") = " + i))
+//				.peek(i -> System.out.println("d("+index.intValue()+") = " + i))
 				.reduce((left, right) -> left * right)
-				.orElseThrow(IllegalArgumentException::new);
+				.orElseThrow(SolutionNotFoundException::new);
 
 		fillerThread.interrupt();
 		return "" + result;

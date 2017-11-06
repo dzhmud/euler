@@ -29,7 +29,7 @@ public class Problem27 implements EulerSolution {
 				//hint: as we start with n == 0, b should be prime
 				.filter(quadraticFormula -> PrimeUtils.isPrime_v1(quadraticFormula.b))
 				.max(Comparator.comparing(QuadraticFormula::getConsecutivePrimesLength))
-				.orElseThrow(IllegalArgumentException::new)
+				.orElseThrow(SolutionNotFoundException::new)
 				.getCoefficientsProduct();
 	}
 

@@ -39,8 +39,13 @@ public class Problem32 implements EulerSolution {
 						b -> checkPandigital(a, b))
 		);
 
-		System.out.println(solutions);
-		return "" + solutions.stream().map(Solution::getProduct).distinct().peek(System.out::println).reduce((a,b)-> a+b).get();
+//		System.out.println(solutions);
+		return "" + solutions.stream()
+				.map(Solution::getProduct)
+				.distinct()
+//				.peek(System.out::println)
+				.reduce((a,b)-> a+b)
+				.orElseThrow(SolutionNotFoundException::new);
 	}
 
 	private static List<Solution> solutions = new ArrayList<>();

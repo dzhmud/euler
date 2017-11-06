@@ -46,7 +46,7 @@ public class Problem49 implements EulerSolution {
 				.distinct()
 				.map(Problem49::getArithmeticSequence)
 				.filter(list -> list.size() == 3)
-				.findFirst().orElseThrow(IllegalArgumentException::new)
+				.findFirst().orElseThrow(SolutionNotFoundException::new)
 
 				.stream()
 				.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)

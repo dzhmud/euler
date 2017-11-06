@@ -35,7 +35,7 @@ public class Problem39 implements EulerSolution {
 				.collect(Collectors.groupingBy(RightTriangle::getPerimeter))
 				.entrySet().stream()
 				.max(Comparator.comparing(entry -> entry.getValue().size()))
-				.orElseThrow(IllegalArgumentException::new)
+				.orElseThrow(SolutionNotFoundException::new)
 				.getKey();
 	}
 

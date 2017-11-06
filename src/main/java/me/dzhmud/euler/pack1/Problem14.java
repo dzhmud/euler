@@ -40,7 +40,7 @@ public class Problem14 implements EulerSolution {
 		IntStream.rangeClosed(1, 1000*1000).parallel().forEach(i -> lengths.put(i, getSequenceLength(i)));
 		return "" + lengths.entrySet().stream()
 				.max(Comparator.comparing(Map.Entry::getValue))
-				.orElseThrow(IllegalArgumentException::new)
+				.orElseThrow(SolutionNotFoundException::new)
 				.getKey();
 	}
 

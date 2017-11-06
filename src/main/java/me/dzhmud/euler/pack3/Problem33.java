@@ -24,9 +24,9 @@ public class Problem33 implements EulerSolution {
 								.mapToObj(b -> new Fraction(a, b))
 						)
 						.filter(Fraction::isCurious)
-						.peek(System.out::println)
+//						.peek(System.out::println)
 						.reduce(Fraction::multiply)
-						.orElseThrow(IllegalArgumentException::new)
+						.orElseThrow(SolutionNotFoundException::new)
 						.b;
 	}
 
@@ -43,7 +43,7 @@ public class Problem33 implements EulerSolution {
 			}
 		}
 
-		public boolean isCurious() {
+		boolean isCurious() {
 			if (a%10 == 0 && b%10 == 0)
 				return false;
 			final int num0 = a/10, num1 = a%10;
@@ -74,7 +74,7 @@ public class Problem33 implements EulerSolution {
 			}
 		}
 
-		public Fraction simplify() {
+		Fraction simplify() {
 			if (isSimplified)
 				return this;
 			if (b % a == 0) {
@@ -88,18 +88,16 @@ public class Problem33 implements EulerSolution {
 			return this;
 		}
 
-		public Fraction multiply(final Fraction fraction) {
+		Fraction multiply(final Fraction fraction) {
 			final Fraction fr0 = this.simplify(), fr1 = fraction.simplify();
 			return new Fraction(fr0.a * fr1.a, fr0.b * fr1.b).simplify();
 		}
 
 		public boolean equals(Object o) {
-			if (this == o) return true;
-			if (o == null || getClass() != o.getClass()) return false;
-			return this.equals((Fraction) o);
+			return this == o || o != null && getClass() == o.getClass() && this.equals((Fraction) o);
 		}
 
-		public boolean equals(Fraction fraction) {
+		boolean equals(Fraction fraction) {
 			return (a * fraction.b) == (b * fraction.a);
 		}
 

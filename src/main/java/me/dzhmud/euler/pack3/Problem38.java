@@ -41,7 +41,7 @@ public class Problem38 implements EulerSolution {
 				.mapToObj(Problem38::generateValue)
 				.filter(Problem38::checkPandigital)
 				.max(Comparator.naturalOrder())
-				.orElseThrow(IllegalArgumentException::new);
+				.orElseThrow(SolutionNotFoundException::new);
 	}
 
 	private static String generateValue(int base) {

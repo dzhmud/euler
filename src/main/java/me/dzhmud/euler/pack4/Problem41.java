@@ -30,7 +30,7 @@ public class Problem41 implements EulerSolution {
 		return "" + IntStream.iterate(9876543, i->i-2)
 				.filter(Problem41::isPandigital)
 				.filter(PrimeUtils::isPrime_v1)
-				.findFirst().orElseThrow(IllegalArgumentException::new);
+				.findFirst().orElseThrow(SolutionNotFoundException::new);
 	}
 
 	private static boolean isPandigital(final int a) {

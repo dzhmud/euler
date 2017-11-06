@@ -42,7 +42,7 @@ public class Problem50 implements EulerSolution {
 				.collect(Collectors.toMap(Function.identity(), Problem50::getPrimesSumLength))
 				.entrySet().stream()
 				.max(Comparator.comparing(Map.Entry::getValue))
-				.orElseThrow(IllegalArgumentException::new)
+				.orElseThrow(SolutionNotFoundException::new)
 				.getKey();
 	}
 

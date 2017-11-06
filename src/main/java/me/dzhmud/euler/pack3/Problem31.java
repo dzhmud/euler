@@ -58,13 +58,13 @@ public class Problem31 implements EulerSolution {
 		Coins biggest = getMax(availableCoins);
 		availableCoins = new HashSet<>(availableCoins);
 		availableCoins.remove(biggest);
-		System.out.println(biggest + " removing from set.");
+//		System.out.println(biggest + " removing from set.");
 		if (biggest.value > targetSum) {
-			System.out.println(biggest + " is too much for " + targetSum);
+//			System.out.println(biggest + " is too much for " + targetSum);
 			return countDifferentWays(targetSum, availableCoins, fixedCoins);
 		} else if (biggest.value == targetSum) {
 //			availableCoins.remove(biggest);
-			System.out.println(biggest+ " == targetSum, count 1 + number of ways w/out this value.");
+//			System.out.println(biggest+ " == targetSum, count 1 + number of ways w/out this value.");
 			{
 				List<Coins> finishedVariant = clone(fixedCoins);
 				finishedVariant.add(biggest);
@@ -72,10 +72,10 @@ public class Problem31 implements EulerSolution {
 			}
 			return 1 + countDifferentWays(targetSum, availableCoins, fixedCoins);
 		} else {
-			System.out.println(biggest+ " < " + targetSum);
+//			System.out.println(biggest+ " < " + targetSum);
 			boolean withoutCurrentBiggestCoin = true;
 			while (targetSum >= 0) {
-				System.out.println("counting ways(" + targetSum+", "+availableCoins+")");
+//				System.out.println("counting ways(" + targetSum+", "+availableCoins+")");
 
 				fixedCoins = clone(fixedCoins);
 				if (withoutCurrentBiggestCoin) {
