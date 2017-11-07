@@ -51,6 +51,7 @@ import me.dzhmud.euler.pack4.Problem48;
 import me.dzhmud.euler.pack4.Problem49;
 import me.dzhmud.euler.pack5.Problem51;
 import me.dzhmud.euler.pack5.Problem52;
+import me.dzhmud.euler.pack5.Problem53;
 import me.dzhmud.euler.pack6.Problem67;
 import org.junit.Test;
 
@@ -124,6 +125,7 @@ public class AnswerCorrectnessTest {
 //		test(Problem50.class, "997651");//TODO this one is SLOOOOW
 		test(Problem51.class, "121313");//TODO this one is slow
 		test(Problem52.class, "142857");
+		test(Problem53.class, "4075");
 
 
 		test(Problem67.class, "7273");
