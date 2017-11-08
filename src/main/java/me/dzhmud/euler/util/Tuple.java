@@ -8,7 +8,7 @@ import java.util.Objects;
  *
  * @author dzhmud
  */
-public final class Tuple<K,V> implements Map.Entry<K,V> {
+public class Tuple<K,V> implements Map.Entry<K,V> {
 
 	public static <K,V> Tuple<K,V> of(K key, V value) {
 		return new Tuple<>(key, value);
