@@ -19,9 +19,13 @@ public final class DigitsUtils {
 		return digits;
 	}
 
-	//this one appears to be ~3x faster than #getDigits()
+	//this one appears to be ~3x faster than #getDigits(long)
 	public static int[] getDigits_v2(long value) {
-		final String s = String.valueOf(value);
+		return getDigits(String.valueOf(value));
+
+	}
+
+	public static int[] getDigits(String s) {
 		final int[] digits = new int[s.length()];
 		for (int i = 0; i< s.length();i++){
 			digits[i] = s.charAt(i) - '0';

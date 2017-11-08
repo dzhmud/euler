@@ -30,7 +30,7 @@ public class Problem04 implements EulerSolution {
 		for (int f1 = 900; f1 < 1000; f1++) {
 			for (int f2 = 900; f2 < 1000; f2++) {
 				temp = f1*f2;
-				if (CommonUtils.isPalindrom(temp))
+				if (CommonUtils.isPalindromic(temp))
 					palindroms.add(temp);
 			}
 		}
