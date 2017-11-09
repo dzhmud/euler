@@ -37,7 +37,7 @@ public class Tuple<K,V> implements Map.Entry<K,V> {
 		throw new UnsupportedOperationException();
 	}
 
-	public final boolean equals(Object o) {
+	public boolean equals(Object o) {
 		if (o == this)
 			return true;
 		if (o instanceof Tuple) {
@@ -48,8 +48,12 @@ public class Tuple<K,V> implements Map.Entry<K,V> {
 		return false;
 	}
 
-	public final int hashCode() {
-		return Objects.hashCode(key) ^ Objects.hashCode(value);
+	private Integer hashCode;
+
+	public int hashCode() {
+		if (hashCode == null)
+			hashCode = Objects.hashCode(key) ^ Objects.hashCode(value);
+		return hashCode;
 	}
 
 }

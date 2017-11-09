@@ -1,5 +1,7 @@
 package me.dzhmud.euler.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NavigableMap;
 import java.util.Set;
 import java.util.TreeMap;
@@ -89,6 +91,21 @@ public final class PrimeUtils {
 				HARD_CACHE.put(value, OBJECT);
 			}
 		}
+	}
+
+	/**
+	 * Find all primes in given range.
+	 * Returned list is free for modifying and is sorted in ascending order.
+	 *
+	 * @param fromInclusive lower border (wont be included, if value is not prime)
+	 * @param toExclusive high border
+	 * @return list of all primes in given range.
+	 */
+	public static List<Long> getPrimesInRange(long fromInclusive, long toExclusive) {
+		assert fromInclusive < toExclusive;
+		assert fromInclusive > 0;
+		fillCacheTill(toExclusive);
+		return new ArrayList<>(HARD_CACHE.subMap(fromInclusive, true, toExclusive, false).keySet());
 	}
 
 }

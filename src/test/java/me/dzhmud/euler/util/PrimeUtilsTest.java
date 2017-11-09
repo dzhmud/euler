@@ -1,8 +1,10 @@
 package me.dzhmud.euler.util;
 
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.Collection;
 import java.util.stream.LongStream;
 
 /**
@@ -40,6 +42,19 @@ public class PrimeUtilsTest {
 
 	private static long runTest2() {
 		return LongStream.range(2, 15*1000*1000).filter(PrimeUtils::isPrime_v2).count();
+	}
+
+	@Test
+	public void testPrimesInRange() {
+		test(new int[]{2,3,5,7}, PrimeUtils.getPrimesInRange(2,11));
+		test(new int[]{2,3,5,7,11}, PrimeUtils.getPrimesInRange(2,12));
+		test(new int[]{2}, PrimeUtils.getPrimesInRange(2,3));
+		test(new int[]{}, PrimeUtils.getPrimesInRange(4,5));
+		test(new int[]{5}, PrimeUtils.getPrimesInRange(4,6));
+	}
+
+	private static void test(int[] expected, Collection<Long> actual) {
+		Assert.assertArrayEquals(expected, actual.stream().mapToInt(Long::intValue).toArray());
 	}
 
 	@Test
