@@ -74,15 +74,13 @@ public class Problem51 implements EulerSolution {
 
 	private static List<PermutationStrategy> getAllStrategies(long value) {
 		final int digitsCount = DigitsUtils.getDigitsCount(value);
-		if (CACHE.containsKey(digitsCount))
-			return CACHE.get(digitsCount);
-
-		List<PermutationStrategy> result = new ArrayList<>();
-		for (int i = 1; i < digitsCount ; i++) {
-			result.addAll(PermutationStrategy.XDigitPermutation.getStrategies(value, i));
-		}
-		CACHE.put(digitsCount, result);
-		return result;
+		return CACHE.computeIfAbsent(digitsCount, x -> {
+			List<PermutationStrategy> result = new ArrayList<>();
+			for (int i = 1; i < digitsCount ; i++) {
+				result.addAll(PermutationStrategy.XDigitPermutation.getStrategies(value, i));
+			}
+			return result;
+		});
 
 	}
 
