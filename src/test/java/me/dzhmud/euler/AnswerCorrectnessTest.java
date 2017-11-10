@@ -59,6 +59,7 @@ import me.dzhmud.euler.pack5.Problem58;
 import me.dzhmud.euler.pack5.Problem59;
 import me.dzhmud.euler.pack6.Problem60;
 import me.dzhmud.euler.pack6.Problem61;
+import me.dzhmud.euler.pack6.Problem62;
 import me.dzhmud.euler.pack6.Problem67;
 import org.junit.Test;
 
@@ -141,6 +142,7 @@ public class AnswerCorrectnessTest {
 		test(Problem59.class, "107359");
 		test(Problem60.class, "26033");
 		test(Problem61.class, "28684");
+		test(Problem62.class, "127035954683");
 
 
 		test(Problem67.class, "7273");
