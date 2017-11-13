@@ -8,5 +8,12 @@ package me.dzhmud.euler;
 public interface EulerSolution {
 	java.lang.String getAnswer();
 
-	class SolutionNotFoundException extends RuntimeException {}
+	class SolutionNotFoundException extends RuntimeException {
+		public SolutionNotFoundException() {
+		}
+
+		public SolutionNotFoundException(String message) {
+			super(message);
+		}
+	}
 }
