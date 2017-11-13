@@ -16,6 +16,7 @@ public class PositionSequence {
 
 	private PositionSequence(Function<Integer, Long> function) {
 		this.function = function;
+		this.contains(1000);
 	}
 
 	private final Function<Integer, Long> function;
@@ -29,10 +30,13 @@ public class PositionSequence {
 		return values[index - 1];
 	}
 
+	private long getLastValue() {
+		return values[values.length-1];
+	}
+
 	public boolean contains(final long value) {
-		if (values[values.length-1] < value) {
+		if (getLastValue() < value) {
 			fillToValue(value);
-			return values[values.length-1] == value;
 		}
 		return index(value) >= 0;
 	}
@@ -42,9 +46,19 @@ public class PositionSequence {
 	}
 
 	private void fillToValue(final long value) {
-		if (values[values.length-1] < value) {
-			while(getValue(values.length) < value)
-				fillToIndex(values.length+1);
+		if (getLastValue() < value) {
+
+			while(getLastValue() < value) {
+				if (function.apply(values.length * 2) <= value) {
+					fillToIndex(values.length * 2);
+				} else if (function.apply(values.length * 2) > value) {
+					int add = values.length/2;
+					if (function.apply(values.length *3/2) < value) {
+						add *= 2;
+					}
+					fillToIndex(values.length +add);
+				}
+			}
 		} else {
 			System.out.println("No need to call #fillToValue(). Check your code!");
 		}

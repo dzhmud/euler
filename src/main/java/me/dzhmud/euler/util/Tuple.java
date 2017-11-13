@@ -56,4 +56,8 @@ public class Tuple<K,V> implements Map.Entry<K,V> {
 		return hashCode;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("[%s,%s]", getKey(), getValue());
+	}
 }
