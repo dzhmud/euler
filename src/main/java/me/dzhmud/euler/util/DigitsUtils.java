@@ -1,5 +1,8 @@
 package me.dzhmud.euler.util;
 
+import java.math.BigInteger;
+import java.util.Arrays;
+
 /**
  * Set of methods designed for working with separate digits of the numbers.
  *
@@ -37,6 +40,14 @@ public final class DigitsUtils {
 		assert value >= 0;//TODO refactor if needed.
 		if (value == 0) return 1;
 		return 1+(int)Math.floor(Math.log10(value));
+	}
+
+	public static int getDigitsSum(long value) {
+		return Arrays.stream(getDigits(String.valueOf(value))).sum();
+	}
+
+	public static long getDigitsSum(BigInteger value) {
+		return Arrays.stream(getDigits(String.valueOf(value))).sum();
 	}
 
 }
