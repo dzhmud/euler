@@ -21,7 +21,7 @@ public final class FactorUtils {
 	 * Dumbest version of finding factors.
 	 * @param number
 	 * @param onlyDistinctFactors
-	 * @return
+	 * @return sorted list of factors
 	 */
 	public static List<Long> getFactors_v1(final long number, boolean onlyDistinctFactors) {
 		assert number > 0;
