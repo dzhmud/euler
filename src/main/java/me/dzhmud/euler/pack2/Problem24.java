@@ -24,7 +24,7 @@ import java.util.Arrays;
 public class Problem24 implements EulerSolution {
 
 	public static void main(String[] args) {
-		System.out.println(new Problem24().getAnswer());
+		new Problem24().measureTime();
 	}
 
 	@Override

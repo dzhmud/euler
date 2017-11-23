@@ -21,4 +21,10 @@ public interface EulerSolution {
 	}
 
 	Supplier<SolutionNotFoundException> SNFE = SolutionNotFoundException::new;
+
+	default void measureTime() {
+		long start = System.currentTimeMillis();
+		System.out.println(getAnswer());
+		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+	}
 }

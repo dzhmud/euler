@@ -26,9 +26,7 @@ import java.util.stream.Collectors;
 public class Problem62 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem62().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem62().measureTime();
 	}
 
 	@Override

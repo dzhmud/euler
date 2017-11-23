@@ -26,7 +26,7 @@ import java.util.Calendar;
 public class Problem19 implements EulerSolution {
 
 	public static void main(String[] args) {
-		System.out.println(new Problem19().getAnswer());
+		new Problem19().measureTime();
 	}
 
 	@Override

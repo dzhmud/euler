@@ -18,9 +18,7 @@ import java.util.stream.IntStream;
 public class Problem52 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem52().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem52().measureTime();
 	}
 
 	@Override

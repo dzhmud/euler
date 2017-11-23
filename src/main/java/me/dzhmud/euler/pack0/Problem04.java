@@ -20,7 +20,7 @@ import java.util.List;
 public class Problem04 implements EulerSolution {
 
 	public static void main(String[] args) {
-		System.out.println(new Problem04().getAnswer());
+		new Problem04().measureTime();
 	}
 
 	@Override

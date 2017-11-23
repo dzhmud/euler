@@ -16,9 +16,7 @@ import java.util.LinkedList;
 public class Problem65 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem65().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem65().measureTime();
 	}
 
 	@Override

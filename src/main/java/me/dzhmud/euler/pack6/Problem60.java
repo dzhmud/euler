@@ -24,9 +24,7 @@ import java.util.stream.LongStream;
 public class Problem60 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem60().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem60().measureTime();
 	}
 
 	/**
@@ -39,6 +37,7 @@ public class Problem60 implements EulerSolution {
 	 */
 	@Override
 	public String getAnswer() {
+		PrimeUtils.isPrime_v2(10000);//warmup cache
 		long[] result =
 			LongStream.iterate(13, i-> i+2).filter(PrimeUtils::isPrime_v2).boxed().flatMap(a ->
 				getPrimesBelow(a).stream().filter(b -> isFormingPrimes(b, a)).flatMap(b ->
@@ -61,6 +60,8 @@ public class Problem60 implements EulerSolution {
 	 * Get primes in range [3, highBorder) in descending order;
 	 */
 	private static List<Long> getPrimesBelow(final long highBorder) {
+		if (highBorder <= 3)
+			return Collections.emptyList();
 		return CACHE.computeIfAbsent(highBorder, x -> {
 			List<Long> result = PrimeUtils.getPrimesInRange(3, highBorder);
 			Collections.reverse(result);

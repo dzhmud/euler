@@ -17,9 +17,7 @@ import me.dzhmud.euler.util.PositionSequence;
 public class Problem44 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem44().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem44().measureTime();
 	}
 
 	@Override

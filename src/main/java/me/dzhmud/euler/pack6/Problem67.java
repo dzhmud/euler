@@ -12,7 +12,7 @@ import me.dzhmud.euler.pack1.Problem18;
 public class Problem67 implements EulerSolution {
 
 	public static void main(String[] args) {
-		System.out.println(new Problem67().getAnswer());
+		new Problem67().measureTime();
 	}
 
 	@Override

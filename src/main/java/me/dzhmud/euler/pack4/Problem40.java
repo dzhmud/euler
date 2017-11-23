@@ -29,7 +29,7 @@ import java.util.stream.IntStream;
 public class Problem40 implements EulerSolution {
 
 	public static void main(String[] args) {
-		System.out.println(new Problem40().getAnswer());
+		new Problem40().measureTime();
 	}
 
 	@Override

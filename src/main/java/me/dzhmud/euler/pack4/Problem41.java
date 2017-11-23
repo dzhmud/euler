@@ -18,11 +18,7 @@ import java.util.stream.IntStream;
 public class Problem41 implements EulerSolution {
 
 	public static void main(String[] args) {
-		//hint1: 1-9 and 1-8 pandigitals can't be prime, as sum of their digits is divisible by 3, therefore they are
-		//divisible by 3 too.
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem41().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start)/1000 + " sec");
+		new Problem41().measureTime();
 	}
 
 	@Override

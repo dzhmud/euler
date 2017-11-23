@@ -12,9 +12,7 @@ import me.dzhmud.euler.util.PrimeUtils;
 public class Problem58 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem58().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem58().measureTime();
 	}
 
 	/**

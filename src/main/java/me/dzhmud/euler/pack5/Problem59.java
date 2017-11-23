@@ -14,9 +14,7 @@ import java.util.Arrays;
 public class Problem59 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem59().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem59().measureTime();
 	}
 
 	@Override
@@ -27,7 +25,7 @@ public class Problem59 implements EulerSolution {
 				for (int c = 'a'; c <= 'z';c++) {
 					String decrypted = decrypt(encrypted, new int[]{a,b,c});
 					if (isDecrypted(decrypted)) {
-						System.out.println(decrypted);
+//						System.out.println(decrypted);
 						return "" + getASCIISum(decrypted);
 					}
 				}

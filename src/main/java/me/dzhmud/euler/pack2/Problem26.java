@@ -34,7 +34,7 @@ import static me.dzhmud.euler.pack2.Problem26.Division.getRecurringLength;
 public class Problem26 implements EulerSolution {
 
 	public static void main(String[] args) {
-		System.out.println(new Problem26().getAnswer());
+		new Problem26().measureTime();
 	}
 
 	@Override

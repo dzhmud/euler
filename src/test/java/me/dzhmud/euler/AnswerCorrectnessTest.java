@@ -46,7 +46,6 @@ import me.dzhmud.euler.pack4.Problem43;
 import me.dzhmud.euler.pack4.Problem44;
 import me.dzhmud.euler.pack4.Problem45;
 import me.dzhmud.euler.pack4.Problem46;
-import me.dzhmud.euler.pack4.Problem47;
 import me.dzhmud.euler.pack4.Problem48;
 import me.dzhmud.euler.pack4.Problem49;
 import me.dzhmud.euler.pack5.Problem52;
@@ -57,7 +56,6 @@ import me.dzhmud.euler.pack5.Problem56;
 import me.dzhmud.euler.pack5.Problem57;
 import me.dzhmud.euler.pack5.Problem58;
 import me.dzhmud.euler.pack5.Problem59;
-import me.dzhmud.euler.pack6.Problem60;
 import me.dzhmud.euler.pack6.Problem61;
 import me.dzhmud.euler.pack6.Problem62;
 import me.dzhmud.euler.pack6.Problem63;
@@ -132,7 +130,7 @@ public class AnswerCorrectnessTest {
 		test(Problem44.class, "5482660");
 		test(Problem45.class, "1533776805");
 		test(Problem46.class, "5777");
-		test(Problem47.class, "134043");
+//		test(Problem47.class, "134043");//TODO slow one
 		test(Problem48.class, "9110846700");
 		test(Problem49.class, "296962999629");
 //		test(Problem50.class, "997651");//TODO this one is SLOOOOW
@@ -145,7 +143,7 @@ public class AnswerCorrectnessTest {
 		test(Problem57.class, "153");
 		test(Problem58.class, "26241");
 		test(Problem59.class, "107359");
-		test(Problem60.class, "26033");
+//		test(Problem60.class, "26033");//TODO SLOW
 		test(Problem61.class, "28684");
 		test(Problem62.class, "127035954683");
 		test(Problem63.class, "49");

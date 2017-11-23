@@ -28,7 +28,7 @@ import java.util.List;
 public class Problem31 implements EulerSolution {
 
 	public static void main(String[] args) {
-		System.out.println(new Problem31().getAnswer());
+		new Problem31().measureTime();
 	}
 
 	@Override

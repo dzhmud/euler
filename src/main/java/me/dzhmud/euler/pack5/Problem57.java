@@ -13,9 +13,7 @@ import java.math.BigInteger;
 public class Problem57 implements EulerSolution {
 
 	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		System.out.println(new Problem57().getAnswer());
-		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
+		new Problem57().measureTime();
 	}
 
 	@Override
