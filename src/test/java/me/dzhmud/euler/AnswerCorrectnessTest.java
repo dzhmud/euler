@@ -65,6 +65,7 @@ import me.dzhmud.euler.pack6.Problem64;
 import me.dzhmud.euler.pack6.Problem65;
 import me.dzhmud.euler.pack6.Problem66;
 import me.dzhmud.euler.pack6.Problem67;
+import me.dzhmud.euler.pack6.Problem68;
 import org.junit.Test;
 
 import java.lang.management.ManagementFactory;
@@ -152,6 +153,7 @@ public class AnswerCorrectnessTest {
 		test(Problem65.class, "272");
 		test(Problem66.class, "661");
 		test(Problem67.class, "7273");
+		test(Problem68.class, "6531031914842725");
 	}
 
 	private static void test(Class<? extends EulerSolution> clazz, String answer) {
