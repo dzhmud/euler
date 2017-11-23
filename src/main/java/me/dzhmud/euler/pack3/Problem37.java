@@ -24,7 +24,7 @@ import java.util.stream.IntStream;
 public class Problem37 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem37().measureTime();
+		EulerSolution.measureTime(new Problem37()::getAnswer);
 	}
 
 	@Override

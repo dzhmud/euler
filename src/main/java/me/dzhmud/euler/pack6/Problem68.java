@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class Problem68 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem68().measureTime();
+		EulerSolution.measureTime(new Problem68()::getAnswer);
 	}
 
 	@Override

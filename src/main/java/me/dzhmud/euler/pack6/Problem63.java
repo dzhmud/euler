@@ -15,7 +15,7 @@ import java.math.BigInteger;
 public class Problem63 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem63().measureTime();
+		EulerSolution.measureTime(new Problem63()::getAnswer);
 	}
 
 	@Override

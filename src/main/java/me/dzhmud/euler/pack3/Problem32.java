@@ -22,7 +22,7 @@ import java.util.stream.IntStream;
 public class Problem32 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem32().measureTime();
+		EulerSolution.measureTime(new Problem32()::getAnswer);
 	}
 
 	@Override

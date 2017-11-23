@@ -16,7 +16,7 @@ import me.dzhmud.euler.util.PrimeUtils;
 public class Problem07 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem07().measureTime();
+		EulerSolution.measureTime(new Problem07()::getAnswer);
 	}
 
 	@Override

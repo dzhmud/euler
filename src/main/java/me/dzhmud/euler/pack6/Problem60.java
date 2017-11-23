@@ -24,7 +24,7 @@ import java.util.stream.LongStream;
 public class Problem60 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem60().measureTime();
+		EulerSolution.measureTime(new Problem60()::getAnswer);
 	}
 
 	/**

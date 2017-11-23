@@ -31,7 +31,7 @@ import static me.dzhmud.euler.util.FactorUtils.getFactors_v1;
 public class Problem47 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem47().measureTime();
+		EulerSolution.measureTime(new Problem47()::getAnswer);
 	}
 
 	@Override

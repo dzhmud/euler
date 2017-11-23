@@ -33,7 +33,7 @@ import java.math.BigInteger;
 public class Problem25 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem25().measureTime();
+		EulerSolution.measureTime(new Problem25()::getAnswer);
 	}
 
 	@Override

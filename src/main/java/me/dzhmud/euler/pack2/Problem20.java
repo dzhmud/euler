@@ -21,7 +21,7 @@ import static me.dzhmud.euler.util.FactorialUtils.factorial;
 public class Problem20 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem20().measureTime();
+		EulerSolution.measureTime(new Problem20()::getAnswer);
 	}
 
 	@Override

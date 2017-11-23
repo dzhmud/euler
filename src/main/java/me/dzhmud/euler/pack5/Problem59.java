@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class Problem59 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem59().measureTime();
+		EulerSolution.measureTime(new Problem59()::getAnswer);
 	}
 
 	@Override

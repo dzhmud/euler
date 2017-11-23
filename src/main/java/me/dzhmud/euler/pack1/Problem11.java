@@ -22,7 +22,7 @@ import static java.util.function.IntUnaryOperator.identity;
 public class Problem11 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem11().measureTime();
+		EulerSolution.measureTime(new Problem11()::getAnswer);
 	}
 
 	private static final int SIZE = 20;

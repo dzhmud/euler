@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class Problem08 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem08().measureTime();
+		EulerSolution.measureTime(new Problem08()::getAnswer);
 	}
 
 	private static final int LENGTH = 13;

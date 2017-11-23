@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class Problem54 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem54().measureTime();
+		EulerSolution.measureTime(new Problem54()::getAnswer);
 	}
 
 	@Override

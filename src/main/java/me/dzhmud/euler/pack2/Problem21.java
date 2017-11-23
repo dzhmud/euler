@@ -22,7 +22,7 @@ import static me.dzhmud.euler.util.FactorUtils.getDivisorsSum;
 public class Problem21 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem21().measureTime();
+		EulerSolution.measureTime(new Problem21()::getAnswer);
 	}
 
 	@Override

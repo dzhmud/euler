@@ -18,7 +18,7 @@ import java.util.List;
 public class Problem05 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem05().measureTime();
+		EulerSolution.measureTime(new Problem05()::getAnswer);
 	}
 
 	@Override

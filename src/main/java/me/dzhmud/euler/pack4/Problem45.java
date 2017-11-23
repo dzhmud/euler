@@ -22,7 +22,7 @@ import me.dzhmud.euler.util.PositionSequence;
 public class Problem45 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem45().measureTime();
+		EulerSolution.measureTime(new Problem45()::getAnswer);
 	}
 
 	@Override

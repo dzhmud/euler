@@ -19,7 +19,7 @@ import static me.dzhmud.euler.util.FactorialUtils.factorial;
 public class Problem15 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem15().measureTime();
+		EulerSolution.measureTime(new Problem15()::getAnswer);
 	}
 
 	private static final int SIZE = 20;

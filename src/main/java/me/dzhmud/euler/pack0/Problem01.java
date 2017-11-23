@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 public class Problem01 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem01().measureTime();
+		EulerSolution.measureTime(new Problem01()::getAnswer);
 	}
 
 	@Override

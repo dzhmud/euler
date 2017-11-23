@@ -30,7 +30,7 @@ import java.util.stream.LongStream;
 public class Problem46 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem46().measureTime();
+		EulerSolution.measureTime(new Problem46()::getAnswer);
 	}
 
 	@Override

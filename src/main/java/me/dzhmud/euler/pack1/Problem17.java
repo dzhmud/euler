@@ -20,7 +20,7 @@ import java.util.stream.IntStream;
 public class Problem17 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem17().measureTime();
+		EulerSolution.measureTime(new Problem17()::getAnswer);
 	}
 
 	private int THOUSAND = "one thousand".replace(" ","").length();

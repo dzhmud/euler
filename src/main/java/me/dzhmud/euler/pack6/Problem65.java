@@ -16,7 +16,7 @@ import java.util.LinkedList;
 public class Problem65 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem65().measureTime();
+		EulerSolution.measureTime(new Problem65()::getAnswer);
 	}
 
 	@Override

@@ -34,7 +34,7 @@ import java.util.stream.IntStream;
 public class Problem66 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem66().measureTime();
+		EulerSolution.measureTime(new Problem66()::getAnswer);
 	}
 
 	/**

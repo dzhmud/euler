@@ -22,9 +22,9 @@ public interface EulerSolution {
 
 	Supplier<SolutionNotFoundException> SNFE = SolutionNotFoundException::new;
 
-	default void measureTime() {
+	static void measureTime(Supplier<String> answerSupplier) {
 		long start = System.currentTimeMillis();
-		System.out.println(getAnswer());
+		System.out.println(answerSupplier.get());
 		System.out.println("Solution take " + (System.currentTimeMillis() - start) / 1000 + " sec");
 	}
 }

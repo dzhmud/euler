@@ -28,7 +28,7 @@ import java.util.stream.IntStream;
 public class Problem23 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem23().measureTime();
+		EulerSolution.measureTime(new Problem23()::getAnswer);
 	}
 
 	private final int limit = 28123;

@@ -29,7 +29,7 @@ import me.dzhmud.euler.util.FactorUtils;
 public class Problem12 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem12().measureTime();
+		EulerSolution.measureTime(new Problem12()::getAnswer);
 	}
 
 	@Override

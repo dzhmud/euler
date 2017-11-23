@@ -19,7 +19,7 @@ import me.dzhmud.euler.EulerSolution;
 public class Problem09 implements EulerSolution {
 
 	public static void main(String[] args) {
-		new Problem09().measureTime();
+		EulerSolution.measureTime(new Problem09()::getAnswer);
 	}
 
 	@Override
